@@ -11,6 +11,7 @@ export class UserRoutes {
     const controller = new UserController(service);
 
     router.post('/signup', controller.signup);
+    router.post('/login', controller.login);
 
     return router;
   }
