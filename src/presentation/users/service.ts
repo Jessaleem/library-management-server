@@ -4,12 +4,12 @@ import { CustomError } from '../../domain/errors/customErrors';
 import { RegisterUserDto } from '../../domain/dtos/user/registerUser.dto';
 import { BcryptAdapter } from '../../config/bcryptAdapter';
 import { JwtAdapter } from '../../config/tokenAdapter';
-import { UserEntity } from '../../domain/entities/userEntities';
+import { UserEntity } from '../../domain/entities/userEntity';
 import { LoginUserDto } from '../../domain/dtos/user/loginUser.dto';
 
 const mysqlRole = { LIBRARIAN: UserRole.LIBRARIAN, MEMBER: UserRole.MEMBER };
 
-export class UserServices {
+export class UserService {
   constructor() {}
 
   public async create(user: RegisterUserDto) {

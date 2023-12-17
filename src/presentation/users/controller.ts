@@ -1,11 +1,11 @@
 import { Request, Response } from 'express';
-import { UserServices } from './service';
+import { UserService } from './service';
 import { RegisterUserDto } from '../../domain/dtos/user/registerUser.dto';
 import { CustomError } from '../../domain/errors/customErrors';
 import { LoginUserDto } from '../../domain/dtos/user/loginUser.dto';
 
 export class UserController {
-  constructor(public readonly userService: UserServices) {}
+  constructor(public readonly userService: UserService) {}
 
   private handleError = (error: unknown, res: Response) => {
     if (error instanceof CustomError) {

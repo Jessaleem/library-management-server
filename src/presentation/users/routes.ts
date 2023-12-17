@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { UserServices } from './service';
+import { UserService } from './service';
 import { UserController } from './controller';
 
 export class UserRoutes {
@@ -7,7 +7,7 @@ export class UserRoutes {
 
   static get routes(): Router {
     const router = Router();
-    const service = new UserServices();
+    const service = new UserService();
     const controller = new UserController(service);
 
     router.post('/signup', controller.signup);
