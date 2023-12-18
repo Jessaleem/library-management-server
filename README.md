@@ -14,4 +14,6 @@
 
 ### 6. Configure Prisma with the following command `npx prisma migrate dev` and `npx prisma generate`
 
-### 7. run the command npm run dev
+### 7. To seed the information of users and books run the following command `npx prisma db seed`
+
+### 8. run the command npm run dev

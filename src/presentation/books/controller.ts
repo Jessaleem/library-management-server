@@ -34,4 +34,28 @@ export class BookController {
         return this.handleError(error, res);
       });
   };
+
+  public getAllBooks = (req: Request, res: Response) => {
+    this.bookService
+      .getAll()
+      .then((books) => {
+        return res.status(200).json({ message: 'Books found', data: books });
+      })
+      .catch((error) => {
+        return this.handleError(error, res);
+      });
+  };
+
+  public getById = (req: Request, res: Response) => {
+    const bookId = req.params.id;
+
+    this.bookService
+      .getOne(bookId)
+      .then((book) => {
+        return res.status(200).json({ message: 'Book found', data: book });
+      })
+      .catch((error) => {
+        return this.handleError(error, res);
+      });
+  };
 }
