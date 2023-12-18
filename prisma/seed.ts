@@ -1,5 +1,6 @@
 import { PrismaClient, UserRole } from '@prisma/client';
 import { users, books } from '../src/data/seedData';
+import { BcryptAdapter } from '../src/config/bcryptAdapter';
 
 const prisma = new PrismaClient();
 
@@ -11,7 +12,7 @@ async function main() {
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
-        password: user.password,
+        password: BcryptAdapter.hash(user.password),
         role: user.role as UserRole,
       },
     });

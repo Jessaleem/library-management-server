@@ -124,8 +124,6 @@ export class BookController {
   public getByQuery = async (req: Request, res: Response) => {
     const query = req.query.q;
 
-    console.log(req.query);
-
     this.bookService
       .getByQuery(query as string)
       .then((books) => {
