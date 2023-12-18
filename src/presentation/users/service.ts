@@ -50,7 +50,7 @@ export class UserService {
       where: { email: credentials.email },
     });
     if (!authUser) {
-      throw CustomError.badRequest('Invalid credentials');
+      throw CustomError.badRequest('Invalid credentials email');
     }
 
     const passwordMatch = BcryptAdapter.compare(
@@ -59,7 +59,7 @@ export class UserService {
     );
 
     if (!passwordMatch) {
-      throw CustomError.badRequest('Invalid credentials');
+      throw CustomError.badRequest('Invalid credentials password');
     }
 
     const token = await JwtAdapter.generateToken({ id: authUser.id });

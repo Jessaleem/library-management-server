@@ -7,12 +7,13 @@ export class BookEntity {
     public readonly author: string,
     public readonly genre: string,
     public readonly isbn: string,
-    public readonly copies: number,
-    public readonly isAvailable: boolean
+    public readonly quantity: number,
+    public readonly availableCopies: number
   ) {}
 
   public static fromObject(object: { [key: string]: any }): BookEntity {
-    const { id, title, author, genre, isbn, copies, isAvailable } = object;
+    const { id, title, author, genre, isbn, quantity, availableCopies } =
+      object;
     if (!id) {
       throw CustomError.badRequest('Id is required');
     }
@@ -28,12 +29,20 @@ export class BookEntity {
     if (!isbn) {
       throw CustomError.badRequest('Isbn is required');
     }
-    if (!copies) {
+    if (!quantity) {
       throw CustomError.badRequest('Copies is required');
     }
-    if (!isAvailable) {
+    if (!availableCopies) {
       throw CustomError.badRequest('Is Available is required');
     }
-    return new BookEntity(id, title, author, genre, isbn, copies, isAvailable);
+    return new BookEntity(
+      id,
+      title,
+      author,
+      genre,
+      isbn,
+      quantity,
+      availableCopies
+    );
   }
 }

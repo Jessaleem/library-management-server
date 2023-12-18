@@ -1,5 +1,5 @@
 export interface UserSeed {
-  fistName: string;
+  firstName: string;
   lastName: string;
   email: string;
   password: string;
@@ -8,28 +8,28 @@ export interface UserSeed {
 
 export const users: UserSeed[] = [
   {
-    fistName: 'John',
+    firstName: 'John',
     lastName: 'Doe',
     email: 'johndoe@test.com',
     password: '12345678',
     role: 'LIBRARIAN',
   },
   {
-    fistName: 'Jane',
+    firstName: 'Jane',
     lastName: 'Doe',
     email: 'janedoe@test.com',
     password: '12345678',
     role: 'LIBRARIAN',
   },
   {
-    fistName: 'John',
+    firstName: 'John',
     lastName: 'Smith',
     email: 'johnsmith@test.com',
     password: '12345678',
     role: 'MEMBER',
   },
   {
-    fistName: 'Jane',
+    firstName: 'Jane',
     lastName: 'Smith',
     email: 'janesmith@test.com',
     password: '12345678',

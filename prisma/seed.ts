@@ -8,7 +8,7 @@ async function main() {
   users.forEach(async (user) => {
     const userCreated = await prisma.user.create({
       data: {
-        firstName: user.fistName,
+        firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
         password: user.password,
@@ -26,8 +26,8 @@ async function main() {
         genre: book.genre,
         author: book.author,
         isbn: book.isbn,
-        copies: 1,
-        isAvailable: true,
+        quantity: 1,
+        availableCopies: 1,
       },
     });
     console.log('Book Created: ', bookCreated);

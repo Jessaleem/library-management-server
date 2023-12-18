@@ -14,6 +14,14 @@ export class BookRoutes {
     router.post('/', AuthMiddleware.authenticate, controller.createBook);
     router.get('/', controller.getAllBooks);
     router.get('/:id', controller.getById);
+    router.put('/:id', AuthMiddleware.authenticate, controller.updateBook);
+    router.delete('/:id', AuthMiddleware.authenticate, controller.deleteBook);
+    router.delete(
+      '/copy/:id',
+      AuthMiddleware.authenticate,
+      controller.deleteCopy
+    );
+    router.get('/search/all', controller.getByQuery);
 
     return router;
   }

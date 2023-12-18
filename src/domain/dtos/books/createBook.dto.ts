@@ -4,12 +4,12 @@ export class CreateBookDto {
     public readonly author: string,
     public readonly genre: string,
     public readonly isbn: string,
-    public readonly copies: number = 1,
-    public readonly isAvailable: boolean = true
+    public readonly quantity: number = 1,
+    public readonly availableCopies: number = 1
   ) {}
 
   static create(options: { [key: string]: any }): [string?, CreateBookDto?] {
-    const { title, author, genre, isbn, copies, isAvailable } = options;
+    const { title, author, genre, isbn, quantity, availableCopies } = options;
 
     if (!title) {
       return ['Title is required', undefined];
@@ -26,7 +26,7 @@ export class CreateBookDto {
 
     return [
       undefined,
-      new CreateBookDto(title, author, genre, isbn, copies, isAvailable),
+      new CreateBookDto(title, author, genre, isbn, quantity, availableCopies),
     ];
   }
 }
