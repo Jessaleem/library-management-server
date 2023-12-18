@@ -1,6 +1,6 @@
-import { regularExps } from '../../config/regularExp';
+import { regularExps } from '../../../config/regularExp';
 
-enum Roles {
+export enum Roles {
   LIBRARIAN = 'LIBRARIAN',
   MEMBER = 'MEMBER',
 }

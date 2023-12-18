@@ -3,6 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
 }
 
 datasource db {
@@ -34,8 +35,8 @@ model Book{
   author String
   genre String
   isbn String
-  copies Int
-  isAvailable Boolean
+  quantity Int
+  availableCopies Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   borrows Borrow[]
